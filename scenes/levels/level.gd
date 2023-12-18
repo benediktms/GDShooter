@@ -13,7 +13,9 @@ func _on_player_grenade(pos: Vector2, dir: Vector2):
 	grenade.linear_velocity = dir * grenade.speed
 	$Projectiles.add_child(grenade)
 
-func _on_player_laser(pos: Vector2):
+func _on_player_laser(pos: Vector2, dir: Vector2):
 	var laser = laser_scene.instantiate() as Area2D
 	laser.position = pos
+	laser.rotation_degrees = rad_to_deg(dir.angle()) + 90
+	laser.direction = dir
 	$Projectiles.add_child(laser)

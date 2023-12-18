@@ -5,7 +5,7 @@ extends CharacterBody2D
 var can_fire_laser: bool = true
 var can_throw_gernade: bool = true
 
-signal laser(pos: Vector2)
+signal laser(pos: Vector2, dir: Vector2)
 signal grenade(pos: Vector2, dir: Vector2)
 
 func _process(_delta):
@@ -19,13 +19,13 @@ func _process(_delta):
 
 	if Input.is_action_pressed('primary action') && can_fire_laser:
 		can_fire_laser = false
-		var selected_marker= markers[randi() % markers.size()] as Node
-		laser.emit(selected_marker.global_position)
+		var selected_marker = markers[randi() % markers.size()] as Node
+		laser.emit(selected_marker.global_position, forward_vector)
 		$LaserTimer.start()
 
 	if Input.is_action_pressed('secondary action') && can_throw_gernade:
 		can_throw_gernade = false
-		var selected_marker= markers[0] as Node
+		var selected_marker = markers[0] as Node
 		grenade.emit(selected_marker.global_position, forward_vector)
 		$GrenadeTimer.start()
 
