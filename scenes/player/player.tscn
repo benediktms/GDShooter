@@ -36,5 +36,9 @@ position = Vector2(17, -133)
 [node name="Pos3" type="Marker2D" parent="ProjectileStartPositions"]
 position = Vector2(31, -133)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.6, 0.6)
+position_smoothing_enabled = true
+
 [connection signal="timeout" from="LaserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="GrenadeTimer" to="." method="_on_granade_timer_timeout"]
