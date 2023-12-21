@@ -98,7 +98,7 @@ layer_1/name = "walls"
 layer_1/tile_data = PackedInt32Array(196606, 0, 3, 327680, 0, 1610612737, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 262150, 0, 2, 196614, 0, 2, 131078, 0, 2, 65542, 0, 2, 6, 0, 2, -65530, 131072, 1, -65531, 65536, 0, 65534, 0, 2, 131070, 0, 2, 327685, 65536, 0, 327686, 131072, 2)
 
 [node name="House" parent="Ground" instance=ExtResource("13_isjhd")]
-position = Vector2(-914, 2869)
+position = Vector2(-914, 2873)
 rotation = -1.5708
 
 [node name="LightFanAnimation" parent="Ground" instance=ExtResource("12_wcvqr")]
@@ -118,6 +118,8 @@ position = Vector2(235, 626)
 position = Vector2(588, 537)
 speed = 700
 
+[connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="Ground/House" to="." method="_on_house_player_exited"]
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]

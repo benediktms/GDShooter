@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://nuyvpir4eemg"]
+[gd_scene load_steps=16 format=3 uid="uid://nuyvpir4eemg"]
 
 [ext_resource type="Texture2D" uid="uid://d0jv5ex2ismgl" path="res://graphics/tilesets/interior.png" id="1_11jnc"]
+[ext_resource type="Script" path="res://scenes/house/house.gd" id="1_fwd7o"]
 [ext_resource type="PackedScene" uid="uid://dtdouxln51brt" path="res://scenes/simple_light/simple_light.tscn" id="2_dmqrk"]
 [ext_resource type="PackedScene" uid="uid://bsmec0j2ig01q" path="res://scenes/wall_light/wall_light.tscn" id="3_luwi1"]
 
@@ -225,11 +226,12 @@ physics_layer_0/collision_mask = 11
 sources/1 = SubResource("TileSetAtlasSource_dd4wl")
 
 [node name="House" type="Area2D"]
+position = Vector2(0, -7)
 collision_layer = 4
 collision_mask = 11
+script = ExtResource("1_fwd7o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(199, 1.5)
 shape = SubResource("RectangleShape2D_yhqt7")
 
@@ -245,11 +247,20 @@ layer_2/tile_data = PackedInt32Array(-1, 196609, 7, -131073, 327681, 6, 131071, 
 
 [node name="SimpleLight" parent="." instance=ExtResource("2_dmqrk")]
 position = Vector2(1181, -900)
+collision_layer = 4
+collision_mask = 11
 
 [node name="SimpleLight2" parent="." instance=ExtResource("2_dmqrk")]
-position = Vector2(-168, -194)
+position = Vector2(-175, -281)
 rotation = -1.5708
+collision_layer = 4
+collision_mask = 11
 
 [node name="WallLight" parent="." instance=ExtResource("3_luwi1")]
 position = Vector2(-695, -880)
 rotation = 3.14159
+collision_layer = 4
+collision_mask = 11
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
