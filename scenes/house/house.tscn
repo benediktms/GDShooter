@@ -1,10 +1,35 @@
-[gd_scene load_steps=6 format=3 uid="uid://nuyvpir4eemg"]
+[gd_scene load_steps=15 format=3 uid="uid://nuyvpir4eemg"]
 
 [ext_resource type="Texture2D" uid="uid://d0jv5ex2ismgl" path="res://graphics/tilesets/interior.png" id="1_11jnc"]
 [ext_resource type="PackedScene" uid="uid://dtdouxln51brt" path="res://scenes/simple_light/simple_light.tscn" id="2_dmqrk"]
+[ext_resource type="PackedScene" uid="uid://bsmec0j2ig01q" path="res://scenes/wall_light/wall_light.tscn" id="3_luwi1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yhqt7"]
 size = Vector2(3264, 2083)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_x88b5"]
+polygon = PackedVector2Array(-8, 6, 76, -52, 195, -72, 195, 72, 142, 74, 102, 102, 74, 142, 68, 195, -72, 195, -64, 102)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v4grv"]
+polygon = PackedVector2Array(-72, 195, 72, 195, 74, -195, -70, -195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ef50i"]
+polygon = PackedVector2Array(-8, -6, 76, 52, 195, 72, 195, -72, 142, -74, 102, -102, 74, -142, 68, -195, -72, -195, -64, -102)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_emtpp"]
+polygon = PackedVector2Array(195, 72, 195, -72, -195, -74, -195, 70)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wl3la"]
+polygon = PackedVector2Array(195, 72, 195, -72, -195, -74, -195, 70)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7wo3u"]
+polygon = PackedVector2Array(8, 6, -76, -52, -195, -72, -195, 72, -142, 74, -102, 102, -74, 142, -68, 195, 72, 195, 64, 102)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1kicg"]
+polygon = PackedVector2Array(-72, 195, 72, 195, 74, -195, -70, -195)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gx8fb"]
+polygon = PackedVector2Array(-6, 8, 52, -76, 72, -195, -72, -195, -74, -142, -102, -102, -142, -74, -195, -68, -195, 72, -102, 64)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dd4wl"]
 resource_name = "house"
@@ -62,14 +87,17 @@ texture_region_size = Vector2i(390, 390)
 1:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:5/0/physics_layer_0/angular_velocity = 0.0
 4:0/0 = 0
+4:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_emtpp")
 4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:0/0/physics_layer_0/angular_velocity = 0.0
 4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, 72, -195, -70, 195, -72, 195, 76)
 5:0/0 = 0
+5:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_7wo3u")
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:0/0/physics_layer_0/angular_velocity = 0.0
 5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(20, 24, -70, -50, -195, -74, -195, 66, -132, 84, -98, 116, -76, 150, -72, 195, 76, 195, 64, 112)
 5:1/0 = 0
+5:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_1kicg")
 5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:1/0/physics_layer_0/angular_velocity = 0.0
 5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-72, -195, 70, -195, 72, 195, -76, 195)
@@ -87,22 +115,27 @@ texture_region_size = Vector2i(390, 390)
 6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-74, 170, 70.7107, 169.706, 72, 195, -76, 195)
 6:2/0/physics_layer_0/polygon_1/points = PackedVector2Array(-70.7107, -195, -72.1249, -169.706, 69.2965, -169.706, 72.1249, -195)
 3:0/0 = 0
+3:0/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_x88b5")
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
 3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, 24, 70, -50, 195, -74, 195, 66, 132, 84, 98, 116, 76, 150, 72, 195, -76, 195, -64, 112)
 3:1/0 = 0
+3:1/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_v4grv")
 3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:1/0/physics_layer_0/angular_velocity = 0.0
 3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-72, -195, 70, -195, 72, 195, -76, 195)
 3:2/0 = 0
+3:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_ef50i")
 3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:2/0/physics_layer_0/angular_velocity = 0.0
 3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -24, 70, 50, 195, 74, 195, -66, 132, -84, 98, -116, 76, -150, 72, -195, -76, -195, -64, -112)
 4:2/0 = 0
+4:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_wl3la")
 4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:2/0/physics_layer_0/angular_velocity = 0.0
 4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-195, 72, -195, -70, 195, -72, 195, 76)
 5:2/0 = 0
+5:2/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_gx8fb")
 5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 5:2/0/physics_layer_0/angular_velocity = 0.0
 5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(20, -24, -70, 50, -195, 74, -195, -66, -132, -84, -98, -116, -76, -150, -72, -195, 76, -195, 64, -112)
@@ -186,6 +219,7 @@ texture_region_size = Vector2i(390, 390)
 
 [sub_resource type="TileSet" id="TileSet_8lsx0"]
 tile_size = Vector2i(390, 390)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 11
 sources/1 = SubResource("TileSetAtlasSource_dd4wl")
@@ -215,3 +249,7 @@ position = Vector2(1181, -900)
 [node name="SimpleLight2" parent="." instance=ExtResource("2_dmqrk")]
 position = Vector2(-168, -194)
 rotation = -1.5708
+
+[node name="WallLight" parent="." instance=ExtResource("3_luwi1")]
+position = Vector2(-695, -880)
+rotation = 3.14159
