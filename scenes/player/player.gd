@@ -19,6 +19,7 @@ func _process(_delta):
 
 	if Input.is_action_pressed('primary action') && can_fire_laser:
 		can_fire_laser = false
+		$GPUParticles2D.emitting = true
 		var selected_marker = markers[randi() % markers.size()] as Node
 		laser.emit(selected_marker.global_position, forward_vector)
 		$LaserTimer.start()
