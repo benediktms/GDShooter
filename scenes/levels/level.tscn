@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ch0tcg1dllinn"]
+[gd_scene load_steps=19 format=3 uid="uid://ch0tcg1dllinn"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_7xcx6"]
 [ext_resource type="PackedScene" uid="uid://pm5rxttktp1e" path="res://scenes/gate/gate.tscn" id="2_5me7o"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://dg353m0ci6hnw" path="res://graphics/decals/moss/moss_4.png" id="9_nbhtt"]
 [ext_resource type="Texture2D" uid="uid://cj4y6aoco1dtq" path="res://graphics/decals/moss/moss_5.png" id="10_dmlwh"]
 [ext_resource type="Texture2D" uid="uid://bxd8l5v82mrlf" path="res://graphics/tilesets/soil.png" id="10_ojqao"]
+[ext_resource type="PackedScene" uid="uid://cc6rxsies6pb1" path="res://scenes/light_fan_animaton/light_fan_animation.tscn" id="12_wcvqr"]
 [ext_resource type="PackedScene" uid="uid://nuyvpir4eemg" path="res://scenes/house/house.tscn" id="13_isjhd"]
 [ext_resource type="PackedScene" uid="uid://c07lyiohafgv8" path="res://scenes/steam_vent/steam_vent.tscn" id="14_qqfsh"]
 
@@ -57,6 +58,7 @@ script = ExtResource("1_7xcx6")
 [node name="Stones" type="Sprite2D" parent="Ground"]
 texture_repeat = 2
 position = Vector2(599, 1408)
+scale = Vector2(2.53276, 2.5928)
 texture = ExtResource("2_tqv1m")
 region_enabled = true
 region_rect = Rect2(-2864.29, -486.493, 8244.37, 3630.4)
@@ -95,11 +97,17 @@ layer_0/tile_data = PackedInt32Array(327685, 65537, 0, 327686, 65537, 0, 393222,
 layer_1/name = "walls"
 layer_1/tile_data = PackedInt32Array(196606, 0, 3, 327680, 0, 1610612737, 327681, 65536, 0, 327682, 65536, 0, 327683, 65536, 0, 327684, 65536, 0, 262150, 0, 2, 196614, 0, 2, 131078, 0, 2, 65542, 0, 2, 6, 0, 2, -65530, 131072, 1, -65531, 65536, 0, 65534, 0, 2, 131070, 0, 2, 327685, 65536, 0, 327686, 131072, 2)
 
-[node name="Gate" parent="." instance=ExtResource("2_5me7o")]
-
-[node name="House" parent="." instance=ExtResource("13_isjhd")]
+[node name="House" parent="Ground" instance=ExtResource("13_isjhd")]
 position = Vector2(-914, 2869)
 rotation = -1.5708
+
+[node name="LightFanAnimation" parent="Ground" instance=ExtResource("12_wcvqr")]
+position = Vector2(-916, 1720)
+autoplay = "default"
+frame_progress = 0.618171
+
+[node name="Gate" parent="." instance=ExtResource("2_5me7o")]
+metadata/_edit_lock_ = true
 
 [node name="SteamVent" parent="." instance=ExtResource("14_qqfsh")]
 position = Vector2(235, 626)
@@ -108,6 +116,7 @@ position = Vector2(235, 626)
 
 [node name="Player" parent="." instance=ExtResource("2_46tsv")]
 position = Vector2(588, 537)
+speed = 700
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
