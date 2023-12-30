@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bshb3qxmxnpa6"]
+[gd_scene load_steps=19 format=3 uid="uid://bshb3qxmxnpa6"]
 
 [ext_resource type="PackedScene" uid="uid://ch0tcg1dllinn" path="res://scenes/levels/level.tscn" id="1_r45kc"]
 [ext_resource type="PackedScene" uid="uid://pm5rxttktp1e" path="res://scenes/gate/gate.tscn" id="2_81yrs"]
@@ -14,8 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://bxd8l5v82mrlf" path="res://graphics/tilesets/soil.png" id="11_3ysbn"]
 [ext_resource type="PackedScene" uid="uid://nuyvpir4eemg" path="res://scenes/house/house.tscn" id="12_f61ig"]
 [ext_resource type="PackedScene" uid="uid://cc6rxsies6pb1" path="res://scenes/light_fan_animaton/light_fan_animation.tscn" id="13_f6b5g"]
-[ext_resource type="PackedScene" uid="uid://blfm4ljl48f4f" path="res://scenes/objects/toilet.tscn" id="13_kyvi3"]
-[ext_resource type="PackedScene" uid="uid://baj8s5lb1coec" path="res://scenes/objects/box.tscn" id="14_2qr7g"]
 [ext_resource type="PackedScene" uid="uid://c07lyiohafgv8" path="res://scenes/steam_vent/steam_vent.tscn" id="14_itunb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8jjln"]
@@ -56,8 +54,6 @@ sources/1 = SubResource("TileSetAtlasSource_o2cwr")
 position = Vector2(4, 0)
 script = ExtResource("2_lmx7q")
 
-[node name="Ground" type="Node2D" parent="." index="0"]
-
 [node name="Stones" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
 position = Vector2(599, 1408)
@@ -91,7 +87,7 @@ modulate = Color(0.960784, 0.886275, 0.639216, 1)
 position = Vector2(-314, 1069)
 texture = ExtResource("9_n8vlv")
 
-[node name="TileMap" type="TileMap" parent="Ground" index="7"]
+[node name="TileMap2" type="TileMap" parent="Ground" index="7"]
 position = Vector2(0, 44)
 tile_set = SubResource("TileSet_vnrgy")
 format = 2
@@ -110,24 +106,11 @@ autoplay = "default"
 frame_progress = 0.618171
 
 [node name="Gate" parent="." index="1" instance=ExtResource("2_81yrs")]
-metadata/_edit_lock_ = true
 
 [node name="SteamVent" parent="." index="2" instance=ExtResource("14_itunb")]
 position = Vector2(235, 626)
 
-[node name="Toilet" parent="." index="3" instance=ExtResource("13_kyvi3")]
-position = Vector2(1341, 1158)
-rotation = -1.5708
-collision_layer = 1
-collision_mask = 1
-
-[node name="Box" parent="." index="4" instance=ExtResource("14_2qr7g")]
-position = Vector2(1707, 870)
-rotation = -1.5708
-collision_layer = 1
-collision_mask = 1
-
-[node name="Player" parent="." index="6"]
+[node name="Player" parent="." index="5"]
 position = Vector2(1029, 786)
 
 [connection signal="player_entered" from="Ground/House" to="." method="_on_house_player_entered"]
