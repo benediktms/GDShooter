@@ -23,7 +23,7 @@ format = 2
 position = Vector2(588, 537)
 speed = 700
 
-[node name="CanvasLayer" parent="." instance=ExtResource("3_a46ys")]
+[node name="UI" parent="." instance=ExtResource("3_a46ys")]
 
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]

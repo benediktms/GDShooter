@@ -16,3 +16,4 @@ func _on_player_laser(pos: Vector2, dir: Vector2):
 	laser.rotation_degrees = rad_to_deg(dir.angle()) + 90
 	laser.direction = dir
 	$Projectiles.add_child(laser)
+	$UI.update_laser_text()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c21hy2in6qufe"]
+[gd_scene load_steps=8 format=3 uid="uid://c21hy2in6qufe"]
 
 [ext_resource type="Texture2D" uid="uid://0mf7l1t12ket" path="res://graphics/ui/bullet.png" id="1_aoekf"]
+[ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_gjwsr"]
 [ext_resource type="Theme" uid="uid://dkcfrgxtyp3y3" path="res://scenes/user_interface/main_font_theme.tres" id="1_nqdeq"]
 [ext_resource type="Texture2D" uid="uid://j3ml6ww70lv1" path="res://graphics/ui/grenade.png" id="2_hmlix"]
 [ext_resource type="Texture2D" uid="uid://bralj07gk4f4l" path="res://graphics/ui/progress_bar/bg.png" id="4_7ikxf"]
@@ -8,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bi60pe2yr1g58" path="res://graphics/ui/progress_bar/progress.png" id="6_tcu8l"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_gjwsr")
 
 [node name="LaserCounter" type="Control" parent="."]
 layout_mode = 3
@@ -68,7 +70,7 @@ texture = ExtResource("2_hmlix")
 expand_mode = 4
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = -1
+anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
