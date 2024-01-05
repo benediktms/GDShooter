@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bshb3qxmxnpa6"]
+[gd_scene load_steps=20 format=3 uid="uid://bshb3qxmxnpa6"]
 
 [ext_resource type="PackedScene" uid="uid://ch0tcg1dllinn" path="res://scenes/levels/level.tscn" id="1_r45kc"]
 [ext_resource type="PackedScene" uid="uid://pm5rxttktp1e" path="res://scenes/gate/gate.tscn" id="2_81yrs"]
 [ext_resource type="Script" path="res://scenes/levels/outside.gd" id="2_lmx7q"]
 [ext_resource type="Texture2D" uid="uid://blf60ssy7ltpv" path="res://graphics/ground/stones.png" id="3_4chsy"]
+[ext_resource type="PackedScene" uid="uid://djskxw8vbl55w" path="res://scenes/levels/inside.tscn" id="3_jylhn"]
 [ext_resource type="Texture2D" uid="uid://b33mayl27rljy" path="res://graphics/decals/moss/moss_1.png" id="4_rcqva"]
 [ext_resource type="Texture2D" uid="uid://cjw1cxbxqx2yl" path="res://graphics/decals/moss/moss_2.png" id="5_vfeu3"]
 [ext_resource type="Texture2D" uid="uid://vc4vl7euf6j3" path="res://graphics/decals/moss/moss_3.png" id="6_sucda"]
@@ -53,6 +54,7 @@ sources/1 = SubResource("TileSetAtlasSource_o2cwr")
 [node name="Outside" instance=ExtResource("1_r45kc")]
 position = Vector2(4, 0)
 script = ExtResource("2_lmx7q")
+inside_scene = ExtResource("3_jylhn")
 
 [node name="Stones" type="Sprite2D" parent="Ground" index="0"]
 texture_repeat = 2
