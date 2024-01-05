@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://ch0tcg1dllinn"]
+[gd_scene load_steps=5 format=3 uid="uid://ch0tcg1dllinn"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_7xcx6"]
 [ext_resource type="PackedScene" uid="uid://cet7unjnt0wpw" path="res://scenes/player/player.tscn" id="2_46tsv"]
+[ext_resource type="PackedScene" uid="uid://c21hy2in6qufe" path="res://scenes/user_interface/ui.tscn" id="3_a46ys"]
 
 [sub_resource type="TileSet" id="TileSet_qjryt"]
 
@@ -21,6 +22,8 @@ format = 2
 [node name="Player" parent="." instance=ExtResource("2_46tsv")]
 position = Vector2(588, 537)
 speed = 700
+
+[node name="CanvasLayer" parent="." instance=ExtResource("3_a46ys")]
 
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]
 [connection signal="laser" from="Player" to="." method="_on_player_laser"]
